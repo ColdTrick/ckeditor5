@@ -1,0 +1,33 @@
+{
+	"name": "coldtrick/ckeditor5",
+	"description": "Proof-of-concept plugin for Elgg 5",
+	"homepage": "https://www.coldtrick.com",
+	"type": "elgg-plugin",
+	"keywords": ["elgg", "plugin"],
+	"license": "GPL-2.0-only",
+	"support": {
+		"source": "https://github.com/ColdTrick/ckeditor5",
+		"issues": "https://github.com/ColdTrick/ckeditor5/issues"
+	},
+	"require": {
+		"composer/installers": "^1.0.8",
+		"npm-asset/ckeditor5": "~35.1.0"
+	},
+	"require-dev": {
+		"coldtrick/sniffs": "dev-master"
+	},
+	"conflict": {
+		"elgg/elgg": "<4.3"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
+	},
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
