@@ -5,7 +5,7 @@ namespace Elgg\CKEditor;
 /**
  * Hook callbacks for views
  *
- * @since 4.0
+ * @since 5.0
  * @internal
  */
 class Views {

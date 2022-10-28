@@ -17,12 +17,7 @@ if (!$id) {
 
 elgg_require_css('ckeditor/editor.css');
 
-$config = (array) elgg_trigger_plugin_hook('config', 'ckeditor', [
-	'id' => $id,
-	'editor_type' => elgg_extract('editor_type', $vars),
-], []);
-
-$editor_language = elgg_extract('language', $config, 'en');
+$editor_language = elgg_get_current_language();
 if ($editor_language !== 'en' && elgg_view_exists("ckeditor/translations/{$editor_language}.js")) {
 	elgg_require_js("ckeditor/translations/{$editor_language}");
 }
@@ -30,6 +25,6 @@ if ($editor_language !== 'en' && elgg_view_exists("ckeditor/translations/{$edito
 ?>
 <script>
 	require(['ckeditor/editor'], function (editor) {
-		editor.init('#<?php echo $id; ?>', <?php echo json_encode($config); ?>);
+		editor.init('#<?php echo $id; ?>', '<?php echo elgg_extract('editor_type', $vars); ?>');
 	});
 </script>

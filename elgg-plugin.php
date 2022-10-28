@@ -19,14 +19,18 @@ return [
 		],
 	],
 	'hooks' => [
-		'config' => [
-			'ckeditor' => [
-				'Elgg\CKEditor\Config::getEditorConfig' => [],
-			],
-		],
 		'view_vars' => [
 			'input/longtext' => [
 				'Elgg\CKEditor\Views::setInputLongTextIDViewVar' => [],
+			],
+		],
+	],
+	'routes' => [
+		'default:ckeditor:upload' => [
+			'path' => '/ckeditor/upload',
+			'controller' => \Elgg\CKEditor\Upload::class,
+			'middleware' => [
+				\Elgg\Router\Middleware\Gatekeeper::class,
 			],
 		],
 	],
